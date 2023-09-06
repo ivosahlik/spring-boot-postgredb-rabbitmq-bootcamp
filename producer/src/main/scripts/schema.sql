@@ -1,4 +1,3 @@
-
 create table if not exists Dummy
 (
     id    integer not null,

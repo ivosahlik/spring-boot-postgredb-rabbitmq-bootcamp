@@ -20,4 +20,6 @@ public class Dummy {
 
 	@Column(name = "publishorder")
 	private int publishOrder;
+
+	private String dummy;
 }

@@ -17,6 +17,10 @@ spring:
     publisher-returns: true
     template:
       mandatory: true
+  liquibase:
+    change-log: db/changelog/changelog-master.xml
+    user: bootcamp
+    password: bootcamp
+
 server:
   port: 8080
-    
