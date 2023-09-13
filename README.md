@@ -1,9 +1,14 @@
 ## docker
 docker ps
 
-## run postgredb and rabbitmq
+## run postgredb, rabbitmq and clamav, is need to have docker ran
 docker-compose up
 docker-compose down
 
-## Swagger UI je zde:
+## apps - you can run it on localhost, there is connect to rabbitmq, postgredb and clamav(antivirus)
+producer -> port 8080
+consumer -> port 8081
+cron –> port 8082
+
+## Swagger UI for producer is here:
 http://localhost:8080/swagger-ui.html
