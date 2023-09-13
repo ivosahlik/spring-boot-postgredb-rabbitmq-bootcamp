@@ -5,7 +5,7 @@ docker ps
 docker-compose up
 docker-compose down
 
-## apps - you can run it on localhost, there is connect to rabbitmq, postgredb and clamav(antivirus)
+## apps - you can run it on localhost, there is connect to rabbitmq, postgredb and clamav(check with antivirus)
 producer -> port 8080
 consumer -> port 8081
 cron –> port 8082
