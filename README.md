@@ -12,3 +12,7 @@ cron –> port 8082
 
 ## Swagger UI for producer is here:
 http://localhost:8080/swagger-ui.html
+
+## Design
+
+-> docs/asciidoc/output -> there is bootcamp-manual.pdf
