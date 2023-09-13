@@ -1,0 +1,37 @@
+= Bootcamp
+Doc Writer <ivo.vosahlik@seznam.cz>
+v1.0, 2023-13-09
+:example-caption!:
+ifndef::imagesdir[:imagesdir: images]
+
+This is a user manual.
+
+== Introduction
+
+Project is doing store files to postgredb over rabbitmq.
+
+== Diagrams
+
+[plantuml,auth-protocol]
+....
+Client -> Producer: Post file
+Producer --> PostgreDB: Save data to PostgreDB
+PostgreDB --> Producer: Return id file
+Producer --> RabbitMQ: Send id file to exchange/queue
+Consumer <-- RabbitMQ: Set state to PROCESSING by id file
+Consumer --> PostgreDB: Update data in db with state PROCESSING
+Cron <–- PostgreDB: Fetch all data with state PROCESSING each 10s
+Cron --> Scan: Scan a files with antivirus
+Scan ––> PostgreDB: Set state Approved or Cancelled, updata data by id file
+Scan --> NativeApp: ???
+
+....
+
+== Attributes
+
+.Built-in
+asciidoctor-version:: {asciidoctor-version}
+safe-mode-name:: {safe-mode-name}
+docdir:: {docdir}
+docfile:: {docfile}
+imagesdir:: {imagesdir}
