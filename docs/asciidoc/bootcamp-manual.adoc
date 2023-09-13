@@ -8,7 +8,7 @@ This is a user manual.
 
 == Introduction
 
-Project is doing store files to postgredb over rabbitmq.
+Project is doing store files to postgredb over rabbitmq, during storing there is antivirus check.
 
 == Diagrams
 
