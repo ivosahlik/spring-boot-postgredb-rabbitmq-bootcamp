@@ -3,6 +3,20 @@ logging:
     console: "%clr(%d{HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:%5p}) %clr(---){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
 
 spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: bootcamp
+    password: bootcamp
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        # Hibernate ddl auto (create, create-drop, validate, update)
+    hibernate:
+      ddl-auto: update
   main:
     banner-mode: OFF
   rabbitmq:
@@ -11,3 +25,6 @@ spring:
     password: guest
 server:
   port: 8081
+
+
+

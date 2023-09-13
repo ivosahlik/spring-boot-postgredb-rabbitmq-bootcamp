@@ -1,4 +1,4 @@
-package cz.ivosahlik.producer;
+package cz.ivosahlik.cron;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,10 +8,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories("cz.ivosahlik.*")
 @EntityScan(basePackages = {"cz.ivosahlik.*"})
 @SpringBootApplication
-public class Application {
+public class CronApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(CronApplication.class, args);
+    }
 
 }

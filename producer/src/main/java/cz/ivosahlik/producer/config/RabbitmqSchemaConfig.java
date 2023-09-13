@@ -11,31 +11,12 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitmqSchemaConfig {
 
-// OPTION 1
-//	@Bean
-//	public FanoutExchange fanoutExchange() {
-//		return new FanoutExchange("x.another-dummy", true, false);
-//	}
-//
-//	@Bean
-//	public Queue queueAnotherDummy() {
-//		return new Queue("q.another-dummy");
-//	}
-//
-//	@Bean
-//	public Binding bindingAnotherDummy() {
-//		return new Binding("q.another-dummy", DestinationType.QUEUE, "x.another-dummy", "", null);
-//		return BindingBuilder.bind(queueAnotherDummy()).to(fanoutExchange());
-//	}
-
-// OPTION 2
 	@Bean
 	public Declarables rabbitmqSchema() {
 		return new Declarables(
-				new FanoutExchange("x.another-dummy", true, false),
-				new Queue("q.another-dummy"),
-				new Binding("q.another-dummy",
-						DestinationType.QUEUE, "x.another-dummy", "", null));
+				new FanoutExchange("x.upload_file", true, false),
+				new Queue("q.upload_file"),
+				new Binding("q.upload_file",
+						DestinationType.QUEUE, "x.upload_file", "", null));
 	}
-
 }

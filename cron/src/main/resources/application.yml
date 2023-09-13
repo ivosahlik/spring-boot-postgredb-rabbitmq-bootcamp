@@ -2,11 +2,17 @@ logging:
   pattern:
     console: "%clr(%d{HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:%5p}) %clr(---){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
 
+file-service:
+  scheduler-fixed-rate: 10000
+  scheduler-initial-delay: 10000
+
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres
     username: bootcamp
     password: bootcamp
+    hikari:
+      auto-commit: false
   jpa:
     properties:
       hibernate:
@@ -20,22 +26,6 @@ spring:
 
   main:
     banner-mode: OFF
-  rabbitmq:
-    addresses: localhost
-    username: guest
-    password: guest
-    publisher-confirm-type: correlated
-    publisher-returns: true
-    template:
-      mandatory: true
-  http:
-    multipart:
-      max-file-size: 2MB
-      max-request-size: 2MB
-#  liquibase:
-#    change-log: db/changelog/changelog-master.xml
-#    user: bootcamp
-#    password: bootcamp
 
 server:
-  port: 8080
+  port: 8082
