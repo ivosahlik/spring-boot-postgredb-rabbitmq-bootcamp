@@ -14,6 +14,6 @@ public class FileUploadExceptionAdvice extends ResponseEntityExceptionHandler {
   public ResponseEntity<ErrorDTO> handleMaxSizeException() {
     return ResponseEntity
             .status(HttpStatus.EXPECTATION_FAILED)
-            .body(new ErrorDTO("ERROR","File too large!"));
+            .body(new ErrorDTO("ERROR", "File too large!"));
   }
 }
